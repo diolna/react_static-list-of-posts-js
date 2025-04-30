@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './CommentInfo.scss';
 
 export const CommentInfo = ({ comment }) => (
@@ -14,3 +15,13 @@ export const CommentInfo = ({ comment }) => (
     <div className="CommentInfo__body">{comment.body}</div>
   </div>
 );
+
+CommentInfo.propTypes = {
+  comment: PropTypes.shape({
+    postId: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+  }).isRequired,
+};

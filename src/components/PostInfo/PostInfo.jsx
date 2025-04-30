@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './PostInfo.scss';
 import { UserInfo } from '../UserInfo';
 import { CommentList } from '../CommentList';
@@ -28,4 +29,12 @@ export const PostInfo = ({ post }) => {
       )}
     </div>
   );
+};
+
+PostInfo.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    userId: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };

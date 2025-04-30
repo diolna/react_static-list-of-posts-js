@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './UserInfo.scss';
 
 export const UserInfo = ({ user }) => (
@@ -5,3 +6,11 @@ export const UserInfo = ({ user }) => (
     {user.name}
   </a>
 );
+
+UserInfo.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+  }).isRequired,
+};
